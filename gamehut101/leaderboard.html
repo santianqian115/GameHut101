@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏排行榜 - GameHut | 热门游戏、评分排行、最新游戏</title>
+    <meta name="description" content="GameHut游戏排行榜，展示最热门、最高评分、最新发布的游戏，帮助您发现优质游戏。">
+    <meta name="keywords" content="游戏排行榜,热门游戏,评分排行,最新游戏,游戏推荐">
+    <meta name="author" content="GameHut">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gamehut.space/leaderboard.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gamehut.space/leaderboard.html">
+    <meta property="og:title" content="游戏排行榜 - GameHut">
+    <meta property="og:description" content="发现最热门和最高评分的游戏">
+    <meta property="og:image" content="https://gamehut.space/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gamehut.space/leaderboard.html">
+    <meta property="twitter:title" content="游戏排行榜 - GameHut">
+    <meta property="twitter:description" content="发现最热门和最高评分的游戏">
+    <meta property="twitter:image" content="https://gamehut.space/images/og-image.jpg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">GameHut</a></h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="categories.html">游戏分类</a></li>
+                        <li><a href="leaderboard.html" class="active">排行榜</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="language-selector">
+                        <select id="languageSelect">
+                            <option value="zh-CN">中文</option>
+                            <option value="en">English</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                            <option value="es">Español</option>
+                            <option value="de">Deutsch</option>
+                            <option value="ru">Русский</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索游戏...">
+                        <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>游戏排行榜</h2>
+                <p>发现最热门、最高评分、最新发布的游戏，让数据为您推荐最佳游戏体验。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranking Tabs -->
+    <section class="ranking-tabs">
+        <div class="container">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="popular">热门游戏</button>
+                <button class="tab-btn" data-tab="rating">评分排行</button>
+                <button class="tab-btn" data-tab="newest">最新发布</button>
+                <button class="tab-btn" data-tab="trending">趋势上升</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Games Ranking -->
+    <section class="ranking-section active" id="popular">
+        <div class="container">
+            <h2>热门游戏排行榜</h2>
+            <p class="section-description">基于游戏播放次数和用户活跃度的热门游戏排行</p>
+            
+            <div class="ranking-list">
+                <div class="ranking-item top-1">
+                    <div class="ranking-number">1</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzE2NDkyNTkucG5n/360x286%23c/MXTkn2.png" alt="Tiny Racing">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=3">Tiny Racing</a></h3>
+                            <p>迷你赛车游戏，简单易上手但充满挑战性</p>
+                            <div class="game-stats">
+                                <span class="play-count"><i class="fas fa-play"></i> 15,234 次播放</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.8/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=3" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+
+                <div class="ranking-item top-2">
+                    <div class="ranking-number">2</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzIxNTM5MzY4LmdpZg==/360x286%23cm/GFv9YY.gif" alt="Öoo Demo">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=1">Öoo Demo</a></h3>
+                            <p>充满创意的解谜冒险游戏，独特的视觉风格</p>
+                            <div class="game-stats">
+                                <span class="play-count"><i class="fas fa-play"></i> 12,567 次播放</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=1" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+
+                <div class="ranking-item top-3">
+                    <div class="ranking-number">3</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzEwMDk0NjI3LnBuZw==/360x286%23c/of8Ghb.png" alt="Unreal Racing">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=5">Unreal Racing</a></h3>
+                            <p>虚幻引擎打造的赛车游戏，逼真的物理效果</p>
+                            <div class="game-stats">
+                                <span class="play-count"><i class="fas fa-play"></i> 10,892 次播放</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.6/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=5" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+
+                <div class="ranking-item">
+                    <div class="ranking-number">4</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzE2MDA5MDEucG5n/360x286%23c/ZiSW7B.png" alt="Neon Tail">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=8">Neon Tail</a></h3>
+                            <p>霓虹风格的跑酷游戏，充满未来感</p>
+                            <div class="game-stats">
+                                <span class="play-count"><i class="fas fa-play"></i> 9,456 次播放</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.4/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=8" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+
+                <div class="ranking-item">
+                    <div class="ranking-number">5</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzIxNDMzNTg3LmdpZg==/360x286%23c/kLCmSj.gif" alt="Serpentes">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=2">Serpentes: 10th Anniversary Edition</a></h3>
+                            <p>经典贪吃蛇游戏的十周年纪念版</p>
+                            <div class="game-stats">
+                                <span class="play-count"><i class="fas fa-play"></i> 8,234 次播放</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=2" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rating Ranking -->
+    <section class="ranking-section" id="rating">
+        <div class="container">
+            <h2>评分排行榜</h2>
+            <p class="section-description">基于用户评分的游戏质量排行</p>
+            
+            <div class="ranking-list">
+                <div class="ranking-item top-1">
+                    <div class="ranking-number">1</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzE2NDkyNTkucG5n/360x286%23c/MXTkn2.png" alt="Tiny Racing">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=3">Tiny Racing</a></h3>
+                            <p>迷你赛车游戏，简单易上手但充满挑战性</p>
+                            <div class="game-stats">
+                                <span class="rating"><i class="fas fa-star"></i> 4.8/5 (1,234 评价)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=3" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+
+                <div class="ranking-item top-2">
+                    <div class="ranking-number">2</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzEwMDk0NjI3LnBuZw==/360x286%23c/of8Ghb.png" alt="Unreal Racing">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=5">Unreal Racing</a></h3>
+                            <p>虚幻引擎打造的赛车游戏，逼真的物理效果</p>
+                            <div class="game-stats">
+                                <span class="rating"><i class="fas fa-star"></i> 4.6/5 (987 评价)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=5" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+
+                <div class="ranking-item top-3">
+                    <div class="ranking-number">3</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzIxNTM5MzY4LmdpZg==/360x286%23cm/GFv9YY.gif" alt="Öoo Demo">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=1">Öoo Demo</a></h3>
+                            <p>充满创意的解谜冒险游戏，独特的视觉风格</p>
+                            <div class="game-stats">
+                                <span class="rating"><i class="fas fa-star"></i> 4.5/5 (1,567 评价)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=1" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newest Games -->
+    <section class="ranking-section" id="newest">
+        <div class="container">
+            <h2>最新发布</h2>
+            <p class="section-description">最近发布的新游戏</p>
+            
+            <div class="ranking-list">
+                <div class="ranking-item">
+                    <div class="ranking-number">1</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzIwODcwODYwLnBuZw==/360x286%23c/Ui8PFK.png" alt="Easy Delivery Co.">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=4">Easy Delivery Co.</a></h3>
+                            <p>经营您的快递公司，管理车队</p>
+                            <div class="game-stats">
+                                <span class="release-date"><i class="fas fa-calendar"></i> 2024-01-15</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.2/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=4" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+
+                <div class="ranking-item">
+                    <div class="ranking-number">2</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzQyNjA2MjUucG5n/360x286%23c/FqkHoc.png" alt="Pet Rock Simulator">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=7">Pet Rock Simulator</a></h3>
+                            <p>独特的宠物石头模拟器</p>
+                            <div class="game-stats">
+                                <span class="release-date"><i class="fas fa-calendar"></i> 2024-01-10</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.1/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=7" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Games -->
+    <section class="ranking-section" id="trending">
+        <div class="container">
+            <h2>趋势上升</h2>
+            <p class="section-description">近期热度快速上升的游戏</p>
+            
+            <div class="ranking-list">
+                <div class="ranking-item">
+                    <div class="ranking-number">1</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzE2MDA5MDEucG5n/360x286%23c/ZiSW7B.png" alt="Neon Tail">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=8">Neon Tail</a></h3>
+                            <p>霓虹风格的跑酷游戏，充满未来感</p>
+                            <div class="game-stats">
+                                <span class="trend"><i class="fas fa-trending-up"></i> +45% 热度</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.4/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=8" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+
+                <div class="ranking-item">
+                    <div class="ranking-number">2</div>
+                    <div class="ranking-game">
+                        <img src="https://img.itch.zone/aW1nLzIwMTYzNzA5LnBuZw==/360x286%23c/pGVZVV.png" alt="Turbo OutRun">
+                        <div class="game-info">
+                            <h3><a href="game-detail.html?id=6">Turbo OutRun Reimagined</a></h3>
+                            <p>经典OutRun游戏的重制版</p>
+                            <div class="game-stats">
+                                <span class="trend"><i class="fas fa-trending-up"></i> +32% 热度</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.3/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranking-actions">
+                        <a href="game-detail.html?id=6" class="btn btn-primary">立即试玩</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GameHut</h3>
+                    <p>您的一站式游戏平台，提供最优质的在线游戏体验。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="categories.html">游戏分类</a></li>
+                        <li><a href="leaderboard.html">排行榜</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                        <li><a href="#">技术支持</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>合作伙伴</h4>
+                    <ul>
+                        <li><a href="#">游戏开发者</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GameHut. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">Cookie政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 排行榜页面特定的JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLeaderboard();
+        });
+
+        function initializeLeaderboard() {
+            setupTabSwitching();
+            setupAnimations();
+        }
+
+        function setupTabSwitching() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const rankingSections = document.querySelectorAll('.ranking-section');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetTab = this.dataset.tab;
+                    
+                    // 移除所有活动状态
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    rankingSections.forEach(section => section.classList.remove('active'));
+                    
+                    // 添加活动状态
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        }
+
+        function setupAnimations() {
+            // 为排行榜项目添加动画
+            const rankingItems = document.querySelectorAll('.ranking-item');
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            rankingItems.forEach(item => {
+                observer.observe(item);
+            });
+        }
+    </script>
+</body>
+</html> 

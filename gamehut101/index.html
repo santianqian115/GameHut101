@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHut - 最佳在线游戏平台 | 免费游戏、热门游戏、最新游戏</title>
+    <meta name="description" content="GameHut是您的一站式游戏平台，提供免费在线游戏、热门游戏、最新游戏。包含动作、冒险、益智、赛车等多种游戏类型，支持多语言，移动端完美适配。">
+    <meta name="keywords" content="在线游戏,免费游戏,热门游戏,动作游戏,冒险游戏,益智游戏,赛车游戏,移动游戏">
+    <meta name="author" content="GameHut">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gamehut.space/">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gamehut.space/">
+    <meta property="og:title" content="GameHut - 最佳在线游戏平台">
+    <meta property="og:description" content="免费在线游戏平台，包含动作、冒险、益智、赛车等多种游戏类型">
+    <meta property="og:image" content="https://gamehut.space/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gamehut.space/">
+    <meta property="twitter:title" content="GameHut - 最佳在线游戏平台">
+    <meta property="twitter:description" content="免费在线游戏平台，包含动作、冒险、益智、赛车等多种游戏类型">
+    <meta property="twitter:image" content="https://gamehut.space/images/og-image.jpg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">GameHut</a></h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="active">首页</a></li>
+                        <li><a href="categories.html">游戏分类</a></li>
+                        <li><a href="leaderboard.html">排行榜</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="language-selector">
+                        <select id="languageSelect">
+                            <option value="zh-CN">中文</option>
+                            <option value="en">English</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                            <option value="es">Español</option>
+                            <option value="de">Deutsch</option>
+                            <option value="ru">Русский</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索游戏...">
+                        <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>发现无限游戏乐趣</h2>
+                <p>在GameHut，我们为您精选全球最佳在线游戏，从经典到创新，从休闲到竞技，总有一款适合您！</p>
+                <div class="hero-buttons">
+                    <a href="categories.html" class="btn btn-primary">立即探索</a>
+                    <a href="#featured-games" class="btn btn-secondary">热门游戏</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section id="featured-games" class="featured-games">
+        <div class="container">
+            <h2>热门推荐</h2>
+            <div class="games-grid">
+                <div class="game-card featured" data-game-id="1">
+                    <div class="game-image">
+                        <img src="https://img.itch.zone/aW1nLzIxNTM5MzY4LmdpZg==/360x286%23cm/GFv9YY.gif" alt="Öoo Demo">
+                        <div class="game-overlay">
+                            <a href="game-detail.html?id=1" class="play-btn">立即试玩</a>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3><a href="game-detail.html?id=1">Öoo Demo</a></h3>
+                        <p>一款充满创意的解谜冒险游戏，独特的视觉风格和引人入胜的故事情节将带您进入一个神秘的世界。</p>
+                        <div class="game-tags">
+                            <span class="tag">益智</span>
+                            <span class="tag">冒险</span>
+                            <span class="tag">热门</span>
+                        </div>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-text">4.5/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card featured" data-game-id="2">
+                    <div class="game-image">
+                        <img src="https://img.itch.zone/aW1nLzIxNDMzNTg3LmdpZg==/360x286%23c/kLCmSj.gif" alt="Serpentes">
+                        <div class="game-overlay">
+                            <a href="game-detail.html?id=2" class="play-btn">立即试玩</a>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3><a href="game-detail.html?id=2">Serpentes: 10th Anniversary Edition</a></h3>
+                        <p>经典贪吃蛇游戏的十周年纪念版，全新的视觉效果和游戏机制，让您重新体验这款经典游戏的魅力。</p>
+                        <div class="game-tags">
+                            <span class="tag">经典</span>
+                            <span class="tag">休闲</span>
+                            <span class="tag">怀旧</span>
+                        </div>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.0/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card featured" data-game-id="3">
+                    <div class="game-image">
+                        <img src="https://img.itch.zone/aW1nLzE2NDkyNTkucG5n/360x286%23c/MXTkn2.png" alt="Tiny Racing">
+                        <div class="game-overlay">
+                            <a href="game-detail.html?id=3" class="play-btn">立即试玩</a>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3><a href="game-detail.html?id=3">Tiny Racing</a></h3>
+                        <p>迷你赛车游戏，简单易上手但充满挑战性，在紧凑的赛道上展现您的驾驶技巧，成为最快的赛车手！</p>
+                        <div class="game-tags">
+                            <span class="tag">赛车</span>
+                            <span class="tag">竞技</span>
+                            <span class="tag">迷你</span>
+                        </div>
+                        <div class="game-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.8/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2>游戏分类</h2>
+            <div class="categories-grid">
+                <a href="game-list.html?category=action" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>动作游戏</h3>
+                    <p>刺激的动作冒险，挑战您的反应速度</p>
+                </a>
+                
+                <a href="game-list.html?category=racing" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>赛车游戏</h3>
+                    <p>极速竞速，体验速度与激情</p>
+                </a>
+                
+                <a href="game-list.html?category=puzzle" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>益智游戏</h3>
+                    <p>锻炼大脑，挑战逻辑思维</p>
+                </a>
+                
+                <a href="game-list.html?category=adventure" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <h3>冒险游戏</h3>
+                    <p>探索未知世界，开启精彩冒险</p>
+                </a>
+                
+                <a href="game-list.html?category=simulation" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>模拟游戏</h3>
+                    <p>体验真实生活，模拟各种场景</p>
+                </a>
+                
+                <a href="game-list.html?category=arcade" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>街机游戏</h3>
+                    <p>经典街机，重温童年回忆</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Games Section -->
+    <section class="latest-games">
+        <div class="container">
+            <h2>最新游戏</h2>
+            <div class="games-grid">
+                <div class="game-card" data-game-id="4">
+                    <div class="game-image">
+                        <img src="https://img.itch.zone/aW1nLzIwODcwODYwLnBuZw==/360x286%23c/Ui8PFK.png" alt="Easy Delivery Co.">
+                        <div class="game-overlay">
+                            <a href="game-detail.html?id=4" class="play-btn">立即试玩</a>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3><a href="game-detail.html?id=4">Easy Delivery Co.</a></h3>
+                        <p>经营您的快递公司，管理车队，完成各种配送任务，成为最成功的快递大亨！</p>
+                        <div class="game-tags">
+                            <span class="tag">经营</span>
+                            <span class="tag">模拟</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-game-id="5">
+                    <div class="game-image">
+                        <img src="https://img.itch.zone/aW1nLzEwMDk0NjI3LnBuZw==/360x286%23c/of8Ghb.png" alt="Unreal Racing">
+                        <div class="game-overlay">
+                            <a href="game-detail.html?id=5" class="play-btn">立即试玩</a>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3><a href="game-detail.html?id=5">Unreal Racing</a></h3>
+                        <p>虚幻引擎打造的赛车游戏，逼真的物理效果和精美的画面，带来极致的赛车体验。</p>
+                        <div class="game-tags">
+                            <span class="tag">赛车</span>
+                            <span class="tag">3D</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-game-id="6">
+                    <div class="game-image">
+                        <img src="https://img.itch.zone/aW1nLzIwMTYzNzA5LnBuZw==/360x286%23c/pGVZVV.png" alt="Turbo OutRun">
+                        <div class="game-overlay">
+                            <a href="game-detail.html?id=6" class="play-btn">立即试玩</a>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3><a href="game-detail.html?id=6">Turbo OutRun Reimagined</a></h3>
+                        <p>经典OutRun游戏的重制版，保留原版精髓的同时加入现代元素，重温80年代的赛车经典。</p>
+                        <div class="game-tags">
+                            <span class="tag">经典</span>
+                            <span class="tag">重制</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-game-id="7">
+                    <div class="game-image">
+                        <img src="https://img.itch.zone/aW1nLzQyNjA2MjUucG5n/360x286%23c/FqkHoc.png" alt="Pet Rock Simulator">
+                        <div class="game-overlay">
+                            <a href="game-detail.html?id=7" class="play-btn">立即试玩</a>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3><a href="game-detail.html?id=7">Pet Rock Simulator</a></h3>
+                        <p>独特的宠物石头模拟器，照顾您的石头宠物，给它起名字，装饰它的家，体验不一样的宠物养成。</p>
+                        <div class="game-tags">
+                            <span class="tag">模拟</span>
+                            <span class="tag">休闲</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-game-id="8">
+                    <div class="game-image">
+                        <img src="https://img.itch.zone/aW1nLzE2MDA5MDEucG5n/360x286%23c/ZiSW7B.png" alt="Neon Tail">
+                        <div class="game-overlay">
+                            <a href="game-detail.html?id=8" class="play-btn">立即试玩</a>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3><a href="game-detail.html?id=8">Neon Tail</a></h3>
+                        <p>霓虹风格的跑酷游戏，在充满未来感的城市中奔跑，收集能量，躲避障碍，挑战最高分。</p>
+                        <div class="game-tags">
+                            <span class="tag">跑酷</span>
+                            <span class="tag">霓虹</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GameHut</h3>
+                    <p>您的一站式游戏平台，提供最优质的在线游戏体验。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="categories.html">游戏分类</a></li>
+                        <li><a href="leaderboard.html">排行榜</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                        <li><a href="#">技术支持</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>合作伙伴</h4>
+                    <ul>
+                        <li><a href="#">游戏开发者</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GameHut. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">Cookie政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
