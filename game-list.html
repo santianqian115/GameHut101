@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏列表 - GameHut | 浏览和筛选游戏</title>
+    <meta name="description" content="GameHut游戏列表页面，浏览和筛选各种类型的游戏，支持按分类、评分、热度等条件筛选。">
+    <meta name="keywords" content="游戏列表,游戏筛选,游戏搜索,在线游戏">
+    <meta name="author" content="GameHut">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gamehut.space/game-list.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gamehut.space/game-list.html">
+    <meta property="og:title" content="游戏列表 - GameHut">
+    <meta property="og:description" content="浏览和筛选各种类型的游戏">
+    <meta property="og:image" content="https://gamehut.space/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gamehut.space/game-list.html">
+    <meta property="twitter:title" content="游戏列表 - GameHut">
+    <meta property="twitter:description" content="浏览和筛选各种类型的游戏">
+    <meta property="twitter:image" content="https://gamehut.space/images/og-image.jpg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">GameHut</a></h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="categories.html" class="active">游戏分类</a></li>
+                        <li><a href="leaderboard.html">排行榜</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="language-selector">
+                        <select id="languageSelect">
+                            <option value="zh-CN">中文</option>
+                            <option value="en">English</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                            <option value="es">Español</option>
+                            <option value="de">Deutsch</option>
+                            <option value="ru">Русский</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索游戏...">
+                        <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 id="categoryTitle">游戏列表</h2>
+                <p>浏览和筛选各种类型的游戏，找到最适合您的游戏体验。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="categoryFilter">分类:</label>
+                    <select id="categoryFilter">
+                        <option value="">所有分类</option>
+                        <option value="action">动作游戏</option>
+                        <option value="racing">赛车游戏</option>
+                        <option value="puzzle">益智游戏</option>
+                        <option value="adventure">冒险游戏</option>
+                        <option value="simulation">模拟游戏</option>
+                        <option value="arcade">街机游戏</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="ratingFilter">最低评分:</label>
+                    <select id="ratingFilter">
+                        <option value="">所有评分</option>
+                        <option value="4.5">4.5+ 星</option>
+                        <option value="4.0">4.0+ 星</option>
+                        <option value="3.5">3.5+ 星</option>
+                        <option value="3.0">3.0+ 星</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="tagFilter">标签:</label>
+                    <select id="tagFilter">
+                        <option value="">所有标签</option>
+                        <option value="热门">热门</option>
+                        <option value="经典">经典</option>
+                        <option value="休闲">休闲</option>
+                        <option value="竞技">竞技</option>
+                        <option value="3D">3D</option>
+                        <option value="怀旧">怀旧</option>
+                    </select>
+                </div>
+                
+                <div class="sort-controls">
+                    <label>排序:</label>
+                    <button class="sort-btn active" data-sort="newest">最新</button>
+                    <button class="sort-btn" data-sort="popular">最热</button>
+                    <button class="sort-btn" data-sort="rating">评分</button>
+                    <button class="sort-btn" data-sort="name">名称</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games List Section -->
+    <section class="games-list">
+        <div class="container">
+            <div class="games-header">
+                <h3 id="gamesCount">找到 8 款游戏</h3>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i> 网格视图
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i> 列表视图
+                    </button>
+                </div>
+            </div>
+            
+            <div class="games-grid" id="gamesContainer">
+                <!-- 游戏卡片将通过JavaScript动态生成 -->
+            </div>
+            
+            <div class="load-more">
+                <button id="loadMoreBtn" class="btn btn-primary">加载更多游戏</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GameHut</h3>
+                    <p>您的一站式游戏平台，提供最优质的在线游戏体验。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="categories.html">游戏分类</a></li>
+                        <li><a href="leaderboard.html">排行榜</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                        <li><a href="#">技术支持</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>合作伙伴</h4>
+                    <ul>
+                        <li><a href="#">游戏开发者</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GameHut. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">Cookie政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 游戏列表页面特定的JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeGameList();
+        });
+
+        function initializeGameList() {
+            // 获取URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            
+            // 设置分类标题
+            updateCategoryTitle(category);
+            
+            // 设置分类筛选器
+            if (category) {
+                document.getElementById('categoryFilter').value = category;
+            }
+            
+            // 加载游戏
+            loadGames();
+            
+            // 设置事件监听器
+            setupEventListeners();
+        }
+
+        function updateCategoryTitle(category) {
+            const categoryTitles = {
+                'action': '动作游戏',
+                'racing': '赛车游戏',
+                'puzzle': '益智游戏',
+                'adventure': '冒险游戏',
+                'simulation': '模拟游戏',
+                'arcade': '街机游戏'
+            };
+            
+            const titleElement = document.getElementById('categoryTitle');
+            if (category && categoryTitles[category]) {
+                titleElement.textContent = categoryTitles[category];
+            }
+        }
+
+        function loadGames() {
+            const gamesContainer = document.getElementById('gamesContainer');
+            const games = getFilteredGames();
+            
+            if (games.length === 0) {
+                gamesContainer.innerHTML = `
+                    <div class="no-games">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>没有找到符合条件的游戏</h3>
+                        <p>请尝试调整筛选条件或搜索其他关键词。</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const gamesHTML = games.map(game => createGameCardHTML(game)).join('');
+            gamesContainer.innerHTML = gamesHTML;
+            
+            // 更新游戏数量
+            document.getElementById('gamesCount').textContent = `找到 ${games.length} 款游戏`;
+        }
+
+        function getFilteredGames() {
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const ratingFilter = document.getElementById('ratingFilter').value;
+            const tagFilter = document.getElementById('tagFilter').value;
+            
+            let filteredGames = Object.values(window.GameHut.gamesData);
+            
+            // 分类筛选
+            if (categoryFilter) {
+                filteredGames = filteredGames.filter(game => game.category === categoryFilter);
+            }
+            
+            // 评分筛选
+            if (ratingFilter) {
+                const minRating = parseFloat(ratingFilter);
+                filteredGames = filteredGames.filter(game => game.rating >= minRating);
+            }
+            
+            // 标签筛选
+            if (tagFilter) {
+                filteredGames = filteredGames.filter(game => 
+                    game.tags.some(tag => tag === tagFilter)
+                );
+            }
+            
+            // 排序
+            const activeSortBtn = document.querySelector('.sort-btn.active');
+            const sortType = activeSortBtn ? activeSortBtn.dataset.sort : 'newest';
+            
+            filteredGames.sort((a, b) => {
+                switch (sortType) {
+                    case 'newest':
+                        return b.id - a.id;
+                    case 'popular':
+                        return b.rating - a.rating;
+                    case 'rating':
+                        return b.rating - a.rating;
+                    case 'name':
+                        return a.title.localeCompare(b.title);
+                    default:
+                        return 0;
+                }
+            });
+            
+            return filteredGames;
+        }
+
+        function setupEventListeners() {
+            // 筛选器变化事件
+            const filterElements = ['categoryFilter', 'ratingFilter', 'tagFilter'];
+            filterElements.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('change', loadGames);
+                }
+            });
+            
+            // 排序按钮事件
+            const sortBtns = document.querySelectorAll('.sort-btn');
+            sortBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    sortBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    loadGames();
+                });
+            });
+            
+            // 视图切换按钮事件
+            const viewBtns = document.querySelectorAll('.view-btn');
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    viewBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    toggleView(this.dataset.view);
+                });
+            });
+            
+            // 加载更多按钮事件
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', loadMoreGames);
+            }
+        }
+
+        function toggleView(viewType) {
+            const gamesContainer = document.getElementById('gamesContainer');
+            if (viewType === 'list') {
+                gamesContainer.classList.add('list-view');
+            } else {
+                gamesContainer.classList.remove('list-view');
+            }
+        }
+
+        function loadMoreGames() {
+            // 这里可以实现分页加载更多游戏的功能
+            console.log('加载更多游戏...');
+        }
+    </script>
+</body>
+</html> 

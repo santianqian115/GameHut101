@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏详情 - GameHut | 游戏预览、介绍和评论</title>
+    <meta name="description" content="GameHut游戏详情页面，提供游戏预览、详细介绍、用户评论和评分。">
+    <meta name="keywords" content="游戏详情,游戏预览,游戏评论,在线游戏">
+    <meta name="author" content="GameHut">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gamehut.space/game-detail.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gamehut.space/game-detail.html">
+    <meta property="og:title" content="游戏详情 - GameHut">
+    <meta property="og:description" content="游戏预览、介绍和评论">
+    <meta property="og:image" content="https://gamehut.space/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gamehut.space/game-detail.html">
+    <meta property="twitter:title" content="游戏详情 - GameHut">
+    <meta property="twitter:description" content="游戏预览、介绍和评论">
+    <meta property="twitter:image" content="https://gamehut.space/images/og-image.jpg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">GameHut</a></h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="categories.html">游戏分类</a></li>
+                        <li><a href="leaderboard.html">排行榜</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="language-selector">
+                        <select id="languageSelect">
+                            <option value="zh-CN">中文</option>
+                            <option value="en">English</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                            <option value="es">Español</option>
+                            <option value="de">Deutsch</option>
+                            <option value="ru">Русский</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索游戏...">
+                        <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Game Detail Hero -->
+    <section class="game-detail-hero">
+        <div class="container">
+            <div class="game-detail-header">
+                <div class="game-breadcrumb">
+                    <a href="index.html">首页</a> > 
+                    <a href="categories.html">游戏分类</a> > 
+                    <span id="gameCategory">游戏详情</span>
+                </div>
+                <h1 id="gameTitle">游戏标题</h1>
+                <div class="game-meta">
+                    <div class="game-rating-large">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-text" id="gameRating">4.5/5</span>
+                    </div>
+                    <div class="game-tags-large" id="gameTags">
+                        <!-- 标签将通过JavaScript生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Detail Content -->
+    <section class="game-detail-content">
+        <div class="container">
+            <div class="game-detail-layout">
+                <div class="game-main">
+                    <div class="game-preview">
+                        <h3>游戏预览</h3>
+                        <div class="game-iframe-container">
+                            <iframe id="gameIframe" src="" width="552" height="167" frameborder="0"></iframe>
+                        </div>
+                        <div class="game-controls">
+                            <button class="btn btn-primary" id="startGameBtn">
+                                <i class="fas fa-play"></i> 立即试玩
+                            </button>
+                            <button class="btn btn-secondary" id="fullscreenBtn">
+                                <i class="fas fa-expand"></i> 全屏模式
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="game-description">
+                        <h3>游戏介绍</h3>
+                        <div id="gameDescription">
+                            <!-- 游戏描述将通过JavaScript生成 -->
+                        </div>
+                    </div>
+                    
+                    <div class="game-instructions">
+                        <h3>游戏说明</h3>
+                        <div class="instructions-content">
+                            <div class="instruction-item">
+                                <h4><i class="fas fa-keyboard"></i> 操作说明</h4>
+                                <ul>
+                                    <li>使用方向键或WASD键控制角色移动</li>
+                                    <li>空格键执行主要动作</li>
+                                    <li>ESC键暂停游戏</li>
+                                    <li>鼠标点击进行交互</li>
+                                </ul>
+                            </div>
+                            <div class="instruction-item">
+                                <h4><i class="fas fa-trophy"></i> 游戏目标</h4>
+                                <p id="gameObjective">完成游戏设定的目标，获得最高分数。</p>
+                            </div>
+                            <div class="instruction-item">
+                                <h4><i class="fas fa-lightbulb"></i> 游戏技巧</h4>
+                                <ul>
+                                    <li>仔细观察游戏环境</li>
+                                    <li>合理利用道具和技能</li>
+                                    <li>保持耐心和专注</li>
+                                    <li>多尝试不同的策略</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-sidebar">
+                    <div class="game-info-card">
+                        <h4>游戏信息</h4>
+                        <div class="info-item">
+                            <span class="info-label">分类:</span>
+                            <span class="info-value" id="gameCategoryInfo">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">开发者:</span>
+                            <span class="info-value" id="gameDeveloper">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">发布时间:</span>
+                            <span class="info-value" id="gameReleaseDate">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">游戏大小:</span>
+                            <span class="info-value" id="gameSize">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">支持平台:</span>
+                            <span class="info-value" id="gamePlatforms">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-stats-card">
+                        <h4>游戏统计</h4>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number" id="playCount">0</div>
+                                <div class="stat-label">游戏次数</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="favoriteCount">0</div>
+                                <div class="stat-label">收藏次数</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="shareCount">0</div>
+                                <div class="stat-label">分享次数</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-actions-card">
+                        <h4>游戏操作</h4>
+                        <div class="action-buttons">
+                            <button class="action-btn" id="favoriteBtn">
+                                <i class="far fa-heart"></i> 收藏游戏
+                            </button>
+                            <button class="action-btn" id="shareBtn">
+                                <i class="fas fa-share"></i> 分享游戏
+                            </button>
+                            <button class="action-btn" id="reportBtn">
+                                <i class="fas fa-flag"></i> 举报问题
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="related-games-card">
+                        <h4>相关游戏</h4>
+                        <div class="related-games-list" id="relatedGames">
+                            <!-- 相关游戏将通过JavaScript生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <div class="container">
+            <h2>用户评论</h2>
+            <div class="comments-container">
+                <div class="comment-form">
+                    <h3>发表评论</h3>
+                    <form id="commentForm">
+                        <div class="rating-input">
+                            <label>评分:</label>
+                            <div class="star-rating">
+                                <input type="radio" name="rating" value="5" id="star5">
+                                <label for="star5"><i class="fas fa-star"></i></label>
+                                <input type="radio" name="rating" value="4" id="star4">
+                                <label for="star4"><i class="fas fa-star"></i></label>
+                                <input type="radio" name="rating" value="3" id="star3">
+                                <label for="star3"><i class="fas fa-star"></i></label>
+                                <input type="radio" name="rating" value="2" id="star2">
+                                <label for="star2"><i class="fas fa-star"></i></label>
+                                <input type="radio" name="rating" value="1" id="star1">
+                                <label for="star1"><i class="fas fa-star"></i></label>
+                            </div>
+                        </div>
+                        <div class="comment-input">
+                            <textarea id="commentText" placeholder="分享您的游戏体验..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">发表评论</button>
+                    </form>
+                </div>
+                
+                <div class="comments-list" id="commentsList">
+                    <!-- 评论将通过JavaScript生成 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GameHut</h3>
+                    <p>您的一站式游戏平台，提供最优质的在线游戏体验。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="categories.html">游戏分类</a></li>
+                        <li><a href="leaderboard.html">排行榜</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                        <li><a href="#">技术支持</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>合作伙伴</h4>
+                    <ul>
+                        <li><a href="#">游戏开发者</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GameHut. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">服务条款</a>
+                    <a href="#">Cookie政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 游戏详情页面特定的JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeGameDetail();
+        });
+
+        function initializeGameDetail() {
+            // 获取URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameId = urlParams.get('id');
+            
+            if (!gameId || !window.GameHut.gamesData[gameId]) {
+                showGameNotFound();
+                return;
+            }
+            
+            // 加载游戏详情
+            loadGameDetail(gameId);
+            
+            // 设置事件监听器
+            setupGameDetailEvents();
+        }
+
+        function loadGameDetail(gameId) {
+            const game = window.GameHut.gamesData[gameId];
+            
+            // 更新页面标题
+            document.title = `${game.title} - GameHut`;
+            
+            // 更新游戏信息
+            document.getElementById('gameTitle').textContent = game.title;
+            document.getElementById('gameRating').textContent = `${game.rating}/5`;
+            document.getElementById('gameCategory').textContent = getCategoryName(game.category);
+            document.getElementById('gameCategoryInfo').textContent = getCategoryName(game.category);
+            
+            // 更新游戏标签
+            const tagsContainer = document.getElementById('gameTags');
+            tagsContainer.innerHTML = game.tags.map(tag => 
+                `<span class="tag">${tag}</span>`
+            ).join('');
+            
+            // 更新游戏iframe
+            const iframe = document.getElementById('gameIframe');
+            iframe.src = game.iframe;
+            
+            // 更新游戏描述
+            const descriptionContainer = document.getElementById('gameDescription');
+            descriptionContainer.innerHTML = game.longDescription.replace(/\n/g, '<br>');
+            
+            // 更新游戏信息
+            updateGameInfo(game);
+            
+            // 加载相关游戏
+            loadRelatedGames(gameId);
+            
+            // 加载评论
+            loadComments(gameId);
+            
+            // 更新星级显示
+            updateStarRating(game.rating);
+        }
+
+        function getCategoryName(category) {
+            const categoryNames = {
+                'action': '动作游戏',
+                'racing': '赛车游戏',
+                'puzzle': '益智游戏',
+                'adventure': '冒险游戏',
+                'simulation': '模拟游戏',
+                'arcade': '街机游戏'
+            };
+            return categoryNames[category] || '未知分类';
+        }
+
+        function updateGameInfo(game) {
+            // 模拟游戏信息
+            document.getElementById('gameDeveloper').textContent = '独立开发者';
+            document.getElementById('gameReleaseDate').textContent = '2024年';
+            document.getElementById('gameSize').textContent = '小于10MB';
+            document.getElementById('gamePlatforms').textContent = 'PC, 移动端';
+            
+            // 模拟统计数据
+            document.getElementById('playCount').textContent = Math.floor(Math.random() * 1000) + 100;
+            document.getElementById('favoriteCount').textContent = Math.floor(Math.random() * 100) + 10;
+            document.getElementById('shareCount').textContent = Math.floor(Math.random() * 50) + 5;
+        }
+
+        function loadRelatedGames(currentGameId) {
+            const currentGame = window.GameHut.gamesData[currentGameId];
+            const relatedGames = Object.values(window.GameHut.gamesData)
+                .filter(game => game.id !== parseInt(currentGameId) && game.category === currentGame.category)
+                .slice(0, 3);
+            
+            const relatedContainer = document.getElementById('relatedGames');
+            if (relatedGames.length === 0) {
+                relatedContainer.innerHTML = '<p>暂无相关游戏</p>';
+                return;
+            }
+            
+            const relatedHTML = relatedGames.map(game => `
+                <div class="related-game">
+                    <img src="${game.image}" alt="${game.title}">
+                    <div class="related-game-info">
+                        <h5><a href="game-detail.html?id=${game.id}">${game.title}</a></h5>
+                        <div class="related-game-rating">
+                            <div class="stars">
+                                ${window.GameHut.generateStarsHTML(game.rating)}
+                            </div>
+                            <span>${game.rating}/5</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            relatedContainer.innerHTML = relatedHTML;
+        }
+
+        function loadComments(gameId) {
+            // 模拟评论数据
+            const comments = [
+                {
+                    id: 1,
+                    user: '游戏玩家1',
+                    rating: 5,
+                    comment: '非常有趣的游戏，画面精美，玩法创新！',
+                    date: '2024-01-15'
+                },
+                {
+                    id: 2,
+                    user: '游戏玩家2',
+                    rating: 4,
+                    comment: '游戏体验不错，但有些地方可以改进。',
+                    date: '2024-01-14'
+                },
+                {
+                    id: 3,
+                    user: '游戏玩家3',
+                    rating: 5,
+                    comment: '强烈推荐！这是我玩过的最好的游戏之一。',
+                    date: '2024-01-13'
+                }
+            ];
+            
+            const commentsContainer = document.getElementById('commentsList');
+            const commentsHTML = comments.map(comment => `
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <div class="comment-user">${comment.user}</div>
+                        <div class="comment-rating">
+                            <div class="stars">
+                                ${window.GameHut.generateStarsHTML(comment.rating)}
+                            </div>
+                        </div>
+                        <div class="comment-date">${comment.date}</div>
+                    </div>
+                    <div class="comment-content">
+                        ${comment.comment}
+                    </div>
+                </div>
+            `).join('');
+            
+            commentsContainer.innerHTML = commentsHTML;
+        }
+
+        function updateStarRating(rating) {
+            const stars = document.querySelectorAll('.game-rating-large .stars i');
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            
+            stars.forEach((star, index) => {
+                if (index < fullStars) {
+                    star.className = 'fas fa-star';
+                } else if (index === fullStars && hasHalfStar) {
+                    star.className = 'fas fa-star-half-alt';
+                } else {
+                    star.className = 'far fa-star';
+                }
+            });
+        }
+
+        function setupGameDetailEvents() {
+            // 开始游戏按钮
+            const startGameBtn = document.getElementById('startGameBtn');
+            if (startGameBtn) {
+                startGameBtn.addEventListener('click', function() {
+                    const iframe = document.getElementById('gameIframe');
+                    iframe.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            
+            // 全屏按钮
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', function() {
+                    const iframe = document.getElementById('gameIframe');
+                    if (iframe.requestFullscreen) {
+                        iframe.requestFullscreen();
+                    }
+                });
+            }
+            
+            // 收藏按钮
+            const favoriteBtn = document.getElementById('favoriteBtn');
+            if (favoriteBtn) {
+                favoriteBtn.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        this.innerHTML = '<i class="fas fa-heart"></i> 已收藏';
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        this.innerHTML = '<i class="far fa-heart"></i> 收藏游戏';
+                    }
+                });
+            }
+            
+            // 分享按钮
+            const shareBtn = document.getElementById('shareBtn');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.getElementById('gameTitle').textContent,
+                            url: window.location.href
+                        });
+                    } else {
+                        // 复制链接到剪贴板
+                        navigator.clipboard.writeText(window.location.href);
+                        alert('链接已复制到剪贴板！');
+                    }
+                });
+            }
+            
+            // 评论表单
+            const commentForm = document.getElementById('commentForm');
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const rating = document.querySelector('input[name="rating"]:checked');
+                    const comment = document.getElementById('commentText').value;
+                    
+                    if (!rating) {
+                        alert('请选择评分！');
+                        return;
+                    }
+                    
+                    if (!comment.trim()) {
+                        alert('请输入评论内容！');
+                        return;
+                    }
+                    
+                    // 模拟提交评论
+                    alert('评论提交成功！');
+                    this.reset();
+                });
+            }
+        }
+
+        function showGameNotFound() {
+            document.body.innerHTML = `
+                <div class="game-not-found">
+                    <h1>游戏未找到</h1>
+                    <p>抱歉，您访问的游戏不存在或已被移除。</p>
+                    <a href="index.html" class="btn btn-primary">返回首页</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html> 
